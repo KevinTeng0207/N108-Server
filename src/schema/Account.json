@@ -1,0 +1,6 @@
+[
+    { "attr": "mid", "type": "Int" },
+    { "attr": "status", "type": "Int" },
+    { "attr": "string", "type": "NVarChar" },
+    { "attr": "oid", "type": "Int" }
+]

@@ -1,0 +1,6 @@
+[
+    { "attr": "cid", "type": "Int" },
+    { "attr": "pid", "type": "Int" },
+    { "attr": "oid", "type": "Int" },
+    { "attr": "type", "type": "NVarChar" }
+]

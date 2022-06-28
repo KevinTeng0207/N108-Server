@@ -1,0 +1,37 @@
+{
+  "name": "usefulexpressapi",
+  "version": "1.0.0",
+  "description": "usefulexpressapi",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon .\\index.js",
+    "reflesh swagger": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whlshy/UsefulExpressAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whlshy/UsefulExpressAPI/issues"
+  },
+  "homepage": "https://github.com/whlshy/UsefulExpressAPI#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "json5": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mssql": "^6.3.1",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.6.0",
+    "nodemon": "^2.0.16",
+    "patch-package": "^6.4.7",
+    "swagger-autogen": "^2.8.1",
+    "swagger-schemagen": "^1.0.4",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

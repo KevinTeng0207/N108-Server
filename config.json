@@ -1,0 +1,30 @@
+{
+    "dbconfig": {
+        "user": "kevin",
+        "password": "kevinteng0414",
+        "server": "localhost",
+        "database": "EDU_science",
+        "options": {
+            "encrypt": true,
+            "enableArithAbort": true
+        }
+    },
+    "port": 8888,
+    "Gmail": {
+        "user": "kevinteng2000@gmail.com",
+        "pass": "kevin0414"
+    },
+    "Google": {
+        "GOOGLE_CLIENT_ID" : "904641366628-mtsdn6odi0sjke4u1nki3baog75sugok.apps.googleusercontent.com",
+        "GOOGLE_CLIENT_SECRET" : "_2z95heY6ySUz856fnJiSTH-",
+        "SERVER_ROOT_URI" : "https://n108.wke.csie.ncnu.edu.tw:8888",
+        "UI_ROOT_URI" : "https://n108.wke.csie.ncnu.edu.tw",
+        "JWT_SECRET" : "shhhhh",
+        "COOKIE_NAME" : "auth_token"
+    },
+    "Facebook": {
+        "facebook_client_id": "184889023690582",
+        "facebook_secret_id": "ed73c76fcf3405c0ee706dc62b795adb",
+        "facebook_redirect_uri": "https://n108.wke.csie.ncnu.edu.tw:8888/Auth/facebookcallback"
+    }
+}

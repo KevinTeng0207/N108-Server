@@ -1,0 +1,7 @@
+[
+    { "attr": "vid", "type": "Int" },
+    { "attr": "currenttime", "type": "Float" },
+    { "attr": "nid", "type": "Int" },
+    { "attr": "title", "type": "NVarChar" },
+    { "attr": "content", "type": "NVarChar" }
+]

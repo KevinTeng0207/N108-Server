@@ -1,0 +1,11 @@
+{
+    "account": "7E0F995F-AC2A-4489-90F3-762EADA00FF5",
+    "key": "8EBF4D45135A7012F82539023E865A14",
+    "idsecret":"7E0F995F-AC2A-4489-90F3-762EADA00FF5:8EBF4D45135A7012F82539023E865A14",
+    "newsso": {
+        "client_id": "c46e46c9ff4dd21d0bc4e7e9987d8ca6",
+        "client_secret": "0afc373d-7b26-449d-b47b-f0d6e9ef8ac6",
+        "redirecturi": "http://localhost:8888/Auth/wkecallback"
+    }
+}
+

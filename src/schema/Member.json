@@ -1,0 +1,5 @@
+[
+    { "attr": "mid", "type": "Int" },
+    { "attr": "vid", "type": "Int" },
+    { "attr": "currenttime", "type": "Float" }
+]

@@ -1,0 +1,827 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "EDU Science API Document",
+    "description": "https://n108.wke.csie.ncnu.edu.tw/",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8888",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/Learn/subject": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得Learn中的科目",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Learn/titlecontent": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得Learn中的主題以及次主題",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Learn/content": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得主題底下的所有學習內容",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Learn/videoNum": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得學習內容影片數量",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pcid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Learn/video": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得學習內容底下的所有影片內容",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Learn/{cid}": {
+      "get": {
+        "tags": [
+          "Learn"
+        ],
+        "summary": "取得單個學習內容",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Watch/show/{oid}": {
+      "get": {
+        "tags": [
+          "Watch"
+        ],
+        "summary": "取出完整單筆的YouTube Video資訊",
+        "description": "",
+        "parameters": [
+          {
+            "name": "oid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Watch/v_subject/{vid}": {
+      "get": {
+        "tags": [
+          "Watch"
+        ],
+        "summary": "取得vid影片的科目",
+        "description": "",
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Note/{vid}": {
+      "get": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "取得影片筆記",
+        "description": "",
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "新增單個筆記",
+        "description": "",
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "currenttime": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Note/note": {
+      "delete": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "刪除單個筆記",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nid": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Note/title": {
+      "put": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "編輯筆記標題",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nid": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Note/content": {
+      "put": {
+        "tags": [
+          "Note"
+        ],
+        "summary": "編輯筆記內容",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nid": {
+                  "type": "integer"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Account/User": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得登入ID以及名稱",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/UserInfo": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得完整登入資料",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/SSOInfo": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得登入來源",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/WKESSOInfo": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得 WKESSO 資料",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/GoogleSSOInfo": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得 GoogleSSO 資料",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/logout": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "登出",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/address": {
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "編輯Member地址",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "string": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Account/phone": {
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "編輯Member電話",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "string": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Account/birthday": {
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "編輯Member生日",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "string": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Account/userimg": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得大頭照",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/graphql": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "上傳大頭照",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "oid": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Account/googleuserimg": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得 Google 大頭照",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Account/facebookuserimg": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "取得 Google 大頭照",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/File/uploadIMG": {
+      "post": {
+        "tags": [
+          "File"
+        ],
+        "summary": "上傳圖片",
+        "description": "",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "files",
+            "in": "formData",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Auth/wkessologin": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "redirect to WKESSO",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Auth/wkecallback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "WKESSO callback",
+        "description": "",
+        "parameters": [
+          {
+            "name": "grantCode",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Auth/google/url": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "redirect to GoogleSSO",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Auth/googlecallback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "GoogleSSO callback",
+        "description": "",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Auth/facebook/url": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "redirect to FacebookSSO",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Auth/facebookcallback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "FacebookSSO callback",
+        "description": "",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Exam/examlist": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "summary": "取得所有考卷來源",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Exam/exam": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "summary": "取得所有單一學校所有考卷",
+        "description": "",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Exam/example_exam": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "summary": "取得影片相關的題目",
+        "description": "",
+        "parameters": [
+          {
+            "name": "oid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Exam/img_path": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "summary": "取得考卷中的題目",
+        "description": "",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Exam/issue": {
+      "put": {
+        "tags": [
+          "Exam"
+        ],
+        "summary": "提題目交issue",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Detail/{pid}": {
+      "get": {
+        "tags": [
+          "Detail"
+        ],
+        "summary": "取得題目中的詳解",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Detail/content": {
+      "put": {
+        "tags": [
+          "Detail"
+        ],
+        "summary": "增加詳解",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Content": {
+                  "example": "any"
+                },
+                "pid": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Mail/send": {
+      "post": {
+        "tags": [
+          "Mail"
+        ],
+        "summary": "寄送Email",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "subject": {
+                  "example": "any"
+                },
+                "text\r": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Member/videohistory": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "增加觀看紀錄、次數",
+        "description": "",
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "CurrentTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Member/history": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "取得 mid 底下所有觀看紀錄",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Member/Learnhistory": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "取得 mid 底下所有學習觀看紀錄",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/Member/Notehistory": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "取得 mid 底下所有筆記紀錄",
+        "description": "",
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Member/Notelisthistory": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "取得 mid 底下所有有筆記的影片",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {}
+}
